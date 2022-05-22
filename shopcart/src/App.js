@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/navbar';
-import productsData from './productsData';
+import Main from './components/main';
+import DisplayProducts from './components/displayproducts';
+import ShowCart from './components/showcart';
 import { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 // framework
 // 1.app -> nav
@@ -14,29 +22,32 @@ import { useState } from 'react';
 // 3.create displayproduct page
 // 4.lightbox
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      products: productsData
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     products: productsData
+  //   };
+  // }
 
-  handleQuantityChange = (quantity, id, operator = 0) => {
+  // handleQuantityChange = (quantity, id, operator = 0) => {
     
-    let products = this.state.products
-    products.filter(item => item.id === id)[0].value = parseInt(quantity) + parseInt(operator)
-    this.setState({ products })
-    console.log()
+  //   let products = this.state.products
+  //   products.filter(item => item.id === id)[0].value = parseInt(quantity) + parseInt(operator)
+  //   this.setState({ products })
+  //   console.log()
 
-  };
+  // };
 
-  render (){
+  render() {
     return (
-      <div className='App text-secondary'>
-        <NavBar 
-          products={this.state.products} 
-          handleQuantityChange={this.handleQuantityChange}
+      <div className='App'>
+        <NavBar />
+
+        <Main 
+          // products={this.state.products} 
+          // handleQuantityChange={this.handleQuantityChange}
           />
+
       </div>
     );
   }
