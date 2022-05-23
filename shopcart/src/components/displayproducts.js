@@ -18,6 +18,9 @@ function DisplayProducts(props) {
     const handleClose = () => {
     setShow(false);
   };
+
+    const { handleQuantityChange } = props;
+
     return (     
     <div>
     {props.products.map(product => (
@@ -47,9 +50,9 @@ function DisplayProducts(props) {
                     </div>
                 </div>
         <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-        <Modal.Title>{showImg.desc}</Modal.Title>
-        </Modal.Header>
+            <Modal.Header closeButton>
+                <Modal.Title>{showImg.desc}</Modal.Title>
+            </Modal.Header>
         <Modal.Body>
           <img
             src={showImg.image}

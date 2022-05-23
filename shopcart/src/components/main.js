@@ -11,6 +11,7 @@ import {
 import DisplayProducts from "./displayproducts";
 import ShowCart from "./showcart";
 import productsData from './productsData';
+import CheckOut from './checkout';
 
 
 class Main extends React.Component {
@@ -23,7 +24,7 @@ class Main extends React.Component {
 
     handleQuantityChange = (quantity, id, operator = 0) => {
     
-        let products = this.state.products
+        let products = this.state.products.products
         products.filter(item => item.id === id)[0].value = parseInt(quantity) + parseInt(operator)
         this.setState({ products })
         console.log()
@@ -31,18 +32,13 @@ class Main extends React.Component {
     };
     
     render() {
-        // console.log(this.state.products)
-
       return (
-        // <Routes>
-        //         <Route exact path="/" element={<DisplayProducts  products={this.state.products} /> } />
-        //         <Route path="/showCart" element={<ShowCart cartitems={this.state.products}/>} />
-        // </Routes>
         <Router>
         <div className='container'>
         <Routes>
-            <Route exact path='/' element={<DisplayProducts products={this.state.products.products} />} />
-            <Route path='/showCart' element={<ShowCart />} />
+            <Route exact path='/' element={<DisplayProducts products={this.state.products.products} handleQuantityChange={this.handleQuantityChange} />} />
+            <Route path='/showCart' element={<ShowCart cartitems={this.state.products.products} />} />
+            <Route path='/checkOut' element={<CheckOut checkoutitems={this.state.products.products} />} />
         </Routes>
         </div>
         </Router>

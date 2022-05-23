@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/navbar';
 import Main from './components/main';
-import DisplayProducts from './components/displayproducts';
-import ShowCart from './components/showcart';
-import { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
 
 // framework
 // 1.app -> nav
@@ -40,14 +31,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
+      <div className='App text-secondary'>
         <NavBar />
-
-        <Main 
-          // products={this.state.products} 
-          // handleQuantityChange={this.handleQuantityChange}
-          />
-
+        <Main />
       </div>
     );
   }
