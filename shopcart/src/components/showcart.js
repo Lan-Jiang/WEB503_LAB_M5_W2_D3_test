@@ -7,20 +7,8 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusSquare, faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "reactstrap";
+import CheckOut from './checkout';
 
-
-
-// const style = {
-//     position: 'absolute',
-//     top: '50%',
-//     left: '50%',
-//     transform: 'translate(-50%, -50%)',
-//     width: 400,
-//     bgcolor: 'background.paper',
-//     border: '2px solid #000',
-//     boxShadow: 24,
-//     p: 4,
-//   };
 
 function ShowCart(props) {
   const { cartitems, handleQuantityChange } = props;
@@ -36,22 +24,22 @@ function ShowCart(props) {
     {props.cartitems.map((item) => {
           if (item.value > 0) {
             return (
-    <div className='border px-4 py-2'>  
-      <div className='d-flex'>     
-        <div className='d-inline  col-sm-4'>
+              <div className='border px-4 py-2'>  
+                <div className='d-flex'>     
+                  <div className='d-inline  col-sm-4'>
                       <img src={item.image} alt={item.desc} width="150" />
                       <h4 className='justify-content-center'>{item.desc}</h4>
-        </div>
-        <div className='d-inline d-flex col-sm-6 text-left align-items-center'>
+                  </div>
+                  <div className='d-inline d-flex col-sm-6 text-left align-items-center'>
                         <span style={{fontWeight: "bold"}}>Quantity {item.value}</span>
-        </div>
-      </div>
-    </div> 
+                  </div>
+                </div>
+              </div> 
     )
     }
     })} 
     </div>
-    <Button className='btn d-flex text-left my-2'>Check Out</Button>
+    <Button className='btn d-flex text-left my-2'><a className="text-white" href="checkOut">Check Out</a></Button>
     </div>
   )
 }
