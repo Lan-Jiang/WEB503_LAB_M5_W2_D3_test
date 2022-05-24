@@ -8,6 +8,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusSquare, faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "reactstrap";
 import CheckOut from './checkout';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function ShowCart(props) {
@@ -39,10 +45,29 @@ function ShowCart(props) {
     }
     })} 
     </div>
-    <Button className='btn d-flex text-left my-2'><a className="text-white" href="checkOut">Check Out</a></Button>
+    <Checkout totalQuantity={props.totalQuantity} />
     </div>
   )
 }
 
- 
+const Checkout = ({ totalQuantity }) => {
+  return totalQuantity > 0 ? (
+    <div className="items checkout-btn">
+      <Link to="/checkout">
+        <Button className="btn btn-primary" id="cartBtn">
+        <a className="text-white" href="checkOut">
+          Check Out
+          </a>
+        </Button>
+      </Link>
+    </div>
+  ) : (
+    <div className="cart-number-items">
+      <h4>There are 0 items in your cart.</h4>
+      <Link to="/">
+        <button className="btn btn-success cart-btn">Continue Shop</button>
+      </Link>
+    </div>
+  );
+};
 export default ShowCart;
