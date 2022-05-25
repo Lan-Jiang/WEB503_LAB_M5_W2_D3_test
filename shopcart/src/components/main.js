@@ -11,7 +11,7 @@ import {
 import DisplayProducts from "./displayproducts";
 import ShowCart from "./showcart";
 import productsData from './productsData';
-import CheckOut from './checkout';
+import LogIn from './login';
 
 
 class Main extends React.Component {
@@ -37,8 +37,8 @@ class Main extends React.Component {
         <div className='container'>
         <Routes>
             <Route exact path='/' element={<DisplayProducts products={this.state.products.products} handleQuantityChange={this.handleQuantityChange} />} />
-            <Route path='/showCart' element={<ShowCart cartitems={this.state.products.products} />} />
-            <Route path='/checkOut' element={<CheckOut checkoutitems={this.state.products.products} />} />
+            <Route path='/showCart' element={<ShowCart cartitems={this.state.products.products} />} handleQuantityChange={this.handleQuantityChange} />
+            <Route path='/logIn' element={<LogIn checkoutitems={this.state.products.products} handleQuantityChange={this.handleQuantityChange} />} />
         </Routes>
         </div>
         </Router>

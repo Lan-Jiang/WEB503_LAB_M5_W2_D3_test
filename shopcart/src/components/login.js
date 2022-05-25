@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-function CheckOut(props) {
+function LogIn(props) {
   const [login, setLogin] = useState(false);
   const [data, setData] = useState({});
   const [picture, setPicture] = useState("");
@@ -89,4 +89,4 @@ const Welcome = ({ fbpic, fbdata }) => {
   );
 };
 
-export default CheckOut;
+export default LogIn;

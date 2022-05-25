@@ -12,7 +12,7 @@ import DisplayProducts from "./displayproducts";
 import ShowCart from "./showcart";
 
 
-function NavBar() {
+function NavBar(props) {
     return (
         <div className="header bg-info">
             <ul className="navbar">
@@ -21,7 +21,7 @@ function NavBar() {
                 </li>
                 <li className='float-right'>
                 <a href="/showCart">< FontAwesomeIcon icon={faShoppingCart} /></a>
-                    <span> 0 Item(s)</span> 
+                <p className="number-cart">{props.totalQuantity} items</p>
                 </li>
             </ul>
         </div>

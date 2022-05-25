@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusSquare, faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "reactstrap";
-import CheckOut from './checkout';
+import LogIn from './login';
 import {
   BrowserRouter as Router,
   Routes,
@@ -53,7 +53,7 @@ function ShowCart(props) {
 const Checkout = ({ totalQuantity }) => {
   return totalQuantity > 0 ? (
     <div className="items checkout-btn">
-      <Link to="/checkout">
+      <Link to="/logIn">
         <Button className="btn btn-primary" id="cartBtn">
         <a className="text-white" href="checkOut">
           Check Out
